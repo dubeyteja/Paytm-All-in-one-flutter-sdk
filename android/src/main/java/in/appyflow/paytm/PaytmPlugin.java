@@ -26,7 +26,7 @@ import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
+// import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /**
  * PaytmPlugin
@@ -58,14 +58,14 @@ public class PaytmPlugin implements FlutterPlugin, MethodCallHandler, PluginRegi
     // them functionally equivalent. Only one of onAttachedToEngine or registerWith will be called
     // depending on the user's project. onAttachedToEngine or registerWith must both be defined
     // in the same class.
-    public static void registerWith(Registrar registrar) {
+    // public static void registerWith(Registrar registrar) {
 
-        activity = registrar.activity();
-        final MethodChannel channel = new MethodChannel(registrar.messenger(), "paytm");
-        PaytmPlugin paytmPlugin = new PaytmPlugin();
-        channel.setMethodCallHandler(paytmPlugin);
-        registrar.addActivityResultListener(paytmPlugin);
-    }
+    //     activity = registrar.activity();
+    //     final MethodChannel channel = new MethodChannel(registrar.messenger(), "paytm");
+    //     PaytmPlugin paytmPlugin = new PaytmPlugin();
+    //     channel.setMethodCallHandler(paytmPlugin);
+    //     registrar.addActivityResultListener(paytmPlugin);
+    // }
 
     private static void checkResult(int requestCode, int resultCode, Intent data) {
 
@@ -247,7 +247,7 @@ public class PaytmPlugin implements FlutterPlugin, MethodCallHandler, PluginRegi
     }
 
     private static void sendResponse(Map<String, Object> paramMap) {
-        
+
         flutterResult.success(paramMap);
     }
 
